@@ -1,7 +1,7 @@
 -- ctrl + k .. + m
 -- loadstring(game:HttpGet("https://pastebin.com/raw/3P7thYMD"))()
--- loadstring(game:HttpGet("https://pastebin.com/raw/3P7thYMD"))()
-loadstring(game:HttpGet("https://pastebin.com/raw/3P7thYMD", true))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/Yiton223/testik/refs/heads/main/test.txt"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/Yiton223/testik/refs/heads/main/test.txt", true))()
 
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
