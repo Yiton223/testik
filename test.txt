@@ -1,5 +1,5 @@
 -- ctrl + k .. + m
--- loadstring(game:HttpGet("blob:https://paste.sh/c38075e2-8513-4fc7-babe-619bffe10f2e"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/Yiton223/testik/refs/heads/main/test.txt"))()
 
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
@@ -41,11 +41,26 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+local Main = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
+local Garden = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
+local Shop = Window:CreateTab("Shop", 4483362458) -- Title, Image
+
+
+
+
 -- for tables
+
+local ShopSettings = {
+    SellKG = 10 -- продает если меньше чем 10 кг
+}
+-- game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Sell_Inventory"):FireServer()
 
 -- end tables
 
 -- for functions
+local function SellFruits()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = "86.57935333251953, 2.999999761581421, 0.42679277062416077"
+end
 
 
 -- end functions
@@ -53,6 +68,31 @@ local Window = Rayfield:CreateWindow({
 -- for for buttons&td
 
 -- end buttons&td
+
+local Slider = Shop:CreateSlider({
+   Name = "Sell Fruits BELOW KG",
+   Range = {0, 10000},
+   Increment = 10,
+   Suffix = "SellBelowKg",
+   CurrentValue = 10,
+   Flag = "SliderSellBelowKg", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    ShopSettings.SellKG = Value
+   end,
+})
+
+local Toggle = Shop:CreateToggle({
+   Name = "Sell Fruits",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    if Value == false then
+        task.wait(0.1)
+    if Value == true then
+        SellFruits()
+    end
+   end,
+})
 
 -- for more
 
